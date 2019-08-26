@@ -27,13 +27,13 @@ describe("users route", () => {
                 console.log(overriddenOutput);
             }
         }
-        MockClassDepService['@noCallThru']
 
         const ClassService = proxyquire('./../services/ClassService', {
             './ClassDepService': MockClassDepService
         })
 
-        classService = new ClassService();
+        const main = new Main()
+
         classService.callDep()
 
         expect(consoleLogSpy).to.have.been.calledWith(overriddenOutput);
