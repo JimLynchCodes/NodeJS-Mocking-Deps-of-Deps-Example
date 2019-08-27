@@ -101,6 +101,7 @@ Even in the early version of Angular 1 dependency injection was a core piece of 
 Sure, Angular developers have been able to mock dependency dependencies for years, but they no longer have a one-up on us class instantiators since, as the examples in this repository shows, it is perfectly possible to unit test while mocking deps of deps even without dependency injection, thank you very much though.
 
 ## Contributing
+
 Feel free to open issues and / or PRs if you have any ideas or suggestions or need help. Feel free to star this repo if you like it. Thanks for checking this out, and stay awesome. 
 
 #TestFirst
