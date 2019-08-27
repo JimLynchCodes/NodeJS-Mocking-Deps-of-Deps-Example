@@ -22,8 +22,8 @@ There are a few different ways to acheive mocked dependencies of dependencies in
 
 The current branches correspond to example using these libraries:
 
-- master: example using [`rewiremock`](https://github.com/theKashey/rewiremock)
-- 
+- master: uses [`rewiremock`](https://github.com/theKashey/rewiremock)
+- proxyquire-example: uses [`proxyquire`](https://github.com/thlorenz/proxyquire)
 
 
 ## The OOP Dilemma
