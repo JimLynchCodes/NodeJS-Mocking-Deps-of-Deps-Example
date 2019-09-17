@@ -25,6 +25,9 @@ The current branches correspond to example using these libraries:
 - master: uses [`rewiremock`](https://github.com/theKashey/rewiremock)
 - proxyquire-example: uses [`proxyquire`](https://github.com/thlorenz/proxyquire)
 
+// TODO - Sinon "sandbox stub"
+
+// TODO - Jest
 
 ## The OOP Dilemma
 
