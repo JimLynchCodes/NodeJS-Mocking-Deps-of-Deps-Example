@@ -1,10 +1,8 @@
 
-
-const rewiremock = require("rewiremock/node");
-rewiremock.overrideEntryPoint(module); // this is important
-
+const ClassDepService = require('../services/ClassDepService');
 const overriddenOutput = "fake things, yay!"
 
+const Main = require('./Main');
 const chai = require("chai"),
     expect = require('chai').expect,
     sinonChai = require('sinon-chai'),
@@ -23,23 +21,13 @@ describe("users route", () => {
     });
 
     it("should call a function of its dependency's dependecy", () => {
-        const rewiremock = require("rewiremock/node");
-        const MockClassDepsService = class ClassDepService {
-            doThings() {
-                console.log(overriddenOutput);
-            }
-        }
-        MockClassDepsService['@noCallThru']
 
-        const mock = rewiremock.proxy(() => require("./../services/ClassService.js"), {
-            "./../services/ClassDepService": MockClassDepsService
-        });
+        sinon.stub(ClassDepService.prototype, 'doThings').callsFake(
+            () => {
+                console.log(overriddenOutput)
+            })
 
-        const mainMock = rewiremock.proxy(() => require("./Main.js"), {
-            "./../services/ClassService.js": mock
-        });
-
-        main = new mainMock()
+        main = new Main();
 
         expect(consoleLogSpy).to.have.been.calledOnceWith(overriddenOutput);
 
