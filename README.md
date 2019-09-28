@@ -17,17 +17,15 @@ npm test
 Note how the console prints the text from the `doThings` method on the mocked "ClassDepService" rather than the string that is by in the `doThings` method of real "ClassDepService". 
 
 
-## Many Ways To Win
+## Many Ways To Win (4 Different Solutions To Chose From!)
 There are a few different ways to acheive mocked dependencies of dependencies in node.js, and since I'm such a nice guy I tried to include a few of the ways of doing it here in this repository different branches.
 
 The current branches correspond to example using these libraries:
 
-- master: uses [`rewiremock`](https://github.com/theKashey/rewiremock)
-- proxyquire-example: uses [`proxyquire`](https://github.com/thlorenz/proxyquire)
-
-// TODO - Sinon "sandbox stub"
-
-// TODO - Jest
+- [`rewiremock`](https://github.com/theKashey/rewiremock)
+- [`proxyquire`](https://github.com/thlorenz/proxyquire)
+- [`sinon`](https://github.com/sinonjs/)
+- [`jest`](https://github.com/facebook/jest)
 
 ## The OOP Dilemma
 
