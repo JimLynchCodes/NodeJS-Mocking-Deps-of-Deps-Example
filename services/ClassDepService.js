@@ -3,8 +3,9 @@ class ClassDepService {
   
   doThings() {
     
-    console.log('in class dep service!')
+    console.log('in class dep service!');
     
+    return 'REAL_THING';
   }
   
 }

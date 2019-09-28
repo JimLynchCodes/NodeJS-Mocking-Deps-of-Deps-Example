@@ -5,7 +5,8 @@ module.exports = class ClassService {
   callDep () {
     
     const classDepService = new ClassDepService()
-    classDepService.doThings()
+    
+    return classDepService.doThings()
     
   }
   

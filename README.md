@@ -103,6 +103,21 @@ Even in the early version of Angular 1 dependency injection was a core piece of 
 ## An Apreciation for (But Not A Dependency On) Dependency Injection
 Sure, Angular developers have been able to mock dependency dependencies for years, but they no longer have a one-up on us class instantiators since, as the examples in this repository shows, it is perfectly possible to unit test while mocking deps of deps even without dependency injection, thank you very much though.
 
+
+
+## Jest Solution
+Jest provides a very succinct syntax for mocking dependencies of dependencies with it's "mock by filepath" built-in functionality. 
+
+```
+jest.mock("../services/ClassDepService.js", () => {
+  return YOUR_FAKE_CLASS_IMPLEMENTATION_HERE
+});
+```
+
+The only gotcha I ran into with jest was that I needed to run this mocking code before the file which required "ClassDepService" was even required. This is why I put the jest.mock code at the very top of the file rather than in a beforeEach or directly in the "it" block. 
+
+Another potential con with Jest is that it is not always the greatest for backend nodejs, typescript, and other non-React projects. It is definitely possible to use with all of these things, but the setup may not be as easy, you may experience quirky behavior or odd bugs. For front-end React unit testing especially, Jest is king.
+
 ## Contributing
 
 Feel free to open issues and / or PRs if you have any ideas or suggestions or need help. Feel free to star this repo if you like it. Thanks for checking this out, and stay awesome. 

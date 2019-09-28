@@ -5,7 +5,7 @@ class Main {
     constructor() {
 
         const classService = new ClassService()
-        classService.callDep()
+        this.thing = classService.callDep();
     }
 
 }
